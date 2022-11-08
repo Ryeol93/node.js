@@ -1,0 +1,81 @@
+● node.js란?
+
+Node.js는 Chrome V8 JavaScript 엔진으로 빌드 된 JavaScript 런타임
+노드를 통해 다양한 자바스크립트 애플리케이션을 실행할 수 있으며, 서버를 실행하는 데 제일 많이 사용된다.
+사용되는 언어로는 자바스크립트(Javascript)를 활용하며, 
+Non-blocking I/O와 단일 스레드 이벤트 루프를 통한 높은 처리 성능을 가지고 있는 것이 특징이다.
+내장 HTTP 서버 라이브러리를 포함하고 있어 웹 서버에서 아파치 등의 별도 소프트웨어 없이 동작하는 것이 가능하며, 
+이를 통한 웹 서버의 동작에 있어 더 많은 통제에서 벗어나 여러 가지 기능을 가능하게 한다.
+
+//createServer 웹서버를 만드는 역할
+const server = http.createServer((req, res) => {
+  res.statusCode = 200;
+  res.setHeader('Content-Type', 'text/plain');
+  res.end('Hello World');
+});
+
+server.listen(port, hostname, () => {
+  console.log(`Server running at http://${hostname}:${port}/`);
+});
+
+
+● NPM이란?
+Node Packaged Manager의 약자로  Node.js로 만들어진 모듈을 웹에서 받아서 설치하고 관리해주는 프로그램입니다.
+
+1. 
+-npm init : npm 초기 환경 설정 -> package.json 생성
+-npm init -y : 입력할 내용없이 package.json 생성
+
+2. 
+- npm install 모듈명
+- npm i 모듈명
+
+
+● package.json이란?
+- 현재 프로젝트에 관한 정보와 패키지 매니저(npm, yarn)을 통해 설치한 모듈들의 의존성을 관리하는 파일이다.
+json 포맷으로 이루어져 있다.
+dependencies안에 해당 모듈의 버전과 이름이 추가된다.
+
+● fs 모듈(File System module) 이란?
+- 일 처리와 관련된 전반적인 작업을 하는 모듈을 말한다.
+
+const fs = require( "fs" ); // => fs 모듈 불러오기
+
+[options] 는 가지고 오는 데이터를 어떻게 인코딩을 정해주는 인자이다. 
+생략이 가능한 인자이지만, 주로 utf8을 적어준다.
+
+- readFile ( 읽기파일 )
+fs.readFile(filename, [options], callback)
+=> filename의 파일을 [options]의 방식으로 읽은 후 callback으로 전달된 함수를 호출합니다. (비동기적)
+
+fs.readFileSync(filename, [options])
+=> filename의 파일을 [options]의 방식으로 읽은 후 문자열을 반환합니다. (동기적)
+
+
+- writeFile ( 쓰기파일 )
+fs.writeFile(filename, data, [options], callback)
+=> filename의 파일에 [options]의 방식으로 data 내용을 쓴 후 callback 함수를 호출합니다.(비동기적)
+
+fs.writeFileSync(filename, data, [options])
+=> filename의 파일에 [options]의 방식으로 data 내용을 씁니다.(동기적)
+
+-예외 처리 방식
+1. 동기적 방식 예외처리
+동기적 방식에서는 자바스크립트에서 예외처리를 할 때 일반적으로 써주는 방식인 try~catch 구문으로 처리한다. 
+쓰기도 마찬가지로 try catch 구문으로 써주면 된다.
+
+2. 비동기적 방식 예외처리
+callback 함수의 배개변수 err에 전달되므로, 따로 예외처리를 해주지 않는다.
+
+
+
+
+
+
+
+
+
+
+
+
+
