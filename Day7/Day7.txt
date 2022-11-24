@@ -62,3 +62,10 @@ Passport 모듈
 페이스북 개발자 센터
 https://developers.facebook.com/
 
+
+serializeUser
+로그인 한 뒤 세션에 데이터를 저장할 때 어떤 정보를 저장할지를 결정
+
+deserizlizeUser()
+세션에 저장한 데이터로 로그인한 유저 정보를 복구하는데 사용
+

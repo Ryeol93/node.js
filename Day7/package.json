@@ -11,8 +11,10 @@
   "license": "ISC",
   "dependencies": {
     "cookie-parser": "^1.4.6",
+    "crypto": "^1.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.2",
+    "express-error-handler": "^1.1.0",
     "express-session": "^1.17.3",
     "jade": "^1.11.0",
     "mongodb": "^4.11.0",
@@ -22,6 +24,8 @@
     "mysql": "^2.18.1",
     "nodemailer": "^6.8.0",
     "passport": "^0.6.0",
+    "passport-facebook": "^3.0.0",
+    "passport-local": "^1.0.0",
     "server-static": "^2.0.5"
   }
 }
